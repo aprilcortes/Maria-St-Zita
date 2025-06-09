@@ -37,9 +37,21 @@
       padding: 0px;
       margin: 0;
       background-color: rgba(237, 113, 212, 0.296);
+      backdrop-filter: blur(6px); /* NEW: Adds a blur for glass effect */
+      -webkit-backdrop-filter: blur(6px); /* iOS Safari support */
       position: sticky;
       top: 0;
       z-index: 10;
+    }
+
+      opacity: 0;
+      animation: fadeInHeader 1.5s ease-out forwards;
+    } 
+
+      @keyframes fadeInHeader {
+  to {
+    opacity: 1;
+  }
     }
 
     a.email-link {
@@ -72,6 +84,17 @@
         opacity: 5;
       }
     }
+
+      @media (max-width: 768px) {
+    h1 {
+      font-size: 16px;
+      padding: 8px;
+      background-color: rgba(237, 113, 212, 0.445);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+  }
+
   </style>
 
   <script>
